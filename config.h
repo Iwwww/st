@@ -19,6 +19,7 @@ static int borderpx = 2;
  */
 static char *shell = "/bin/sh";
 char *utmp = NULL;
+
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
@@ -107,8 +108,8 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.5;
-float alphaOffset = 0.15;
+float alpha = 0.7;
+float alphaOffset = 0.0;
 float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
@@ -138,7 +139,6 @@ static const char *colorname[] = {
 	"#ebdbb2", /* 259 -> fg */
 };
 
-
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
@@ -161,7 +161,6 @@ static unsigned int cursorshape = 2;
 /*
  * Default columns and rows numbers
  */
-
 static unsigned int cols = 80;
 static unsigned int rows = 24;
 
