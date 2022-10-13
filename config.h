@@ -5,8 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=14:antialias=true:autohint=true" };
+// static char *font = "mono:pixelsize=18:antialias=true:autohint=true";
+// static char *font2[] = { "JoyPixels:pixelsize=18:antialias=true:autohint=true" };
+static char *font = "DejaVuSansMono:pixelsize=18:antialias=true:autohint=true";
+static char *font2[] = { "DejaVuSansMono:pixelsize=18:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -260,7 +262,7 @@ static Shortcut shortcuts[] = {
 	{ ControlMask|ShiftMask,XK_V,           clippaste,      {.i =  0} },
 	{ ControlMask|ShiftMask,XK_c,           clipcopy,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ ControlMask|ShiftMask,XK_v,           clippaste,      {.i =  0} },
+	{ ControlMask,          XK_v,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
@@ -275,10 +277,10 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	{ MODKEY,		XK_s,		changealpha,	{.f = -0.05} },
 	{ MODKEY,		XK_a,		changealpha,	{.f = +0.05} },
-	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
-	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
+	// { ControlMask,          XK_Up,          zoom,           {.f = +1} },
+	// { ControlMask,          XK_Down,        zoom,           {.f = -1} },
+	{ ControlMask|ShiftMask,XK_K,           zoom,           {.f = +1} },
+	{ ControlMask|ShiftMask,XK_J,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
 	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
 	// { MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
@@ -361,7 +363,7 @@ static Key key[] = {
 	{ XK_KP_Delete,     ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_KP_Delete,     ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[P",       -1,    0},
+	// { XK_KP_Delete,     XK_ANY_MOD,     "\033[P",       -1,    0},
 	{ XK_KP_Delete,     XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_KP_Multiply,   XK_ANY_MOD,     "\033Oj",       +2,    0},
 	{ XK_KP_Add,        XK_ANY_MOD,     "\033Ok",       +2,    0},
@@ -429,7 +431,7 @@ static Key key[] = {
 	{ XK_Delete,        ControlMask,    "\033[3;5~",    +1,    0},
 	{ XK_Delete,        ShiftMask,      "\033[2K",      -1,    0},
 	{ XK_Delete,        ShiftMask,      "\033[3;2~",    +1,    0},
-	{ XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0},
+	// { XK_Delete,        XK_ANY_MOD,     "\033[P",       -1,    0},
 	{ XK_Delete,        XK_ANY_MOD,     "\033[3~",      +1,    0},
 	{ XK_BackSpace,     XK_NO_MOD,      "\177",          0,    0},
 	{ XK_BackSpace,     Mod1Mask,       "\033\177",      0,    0},
