@@ -1,0 +1,10 @@
+/* Patches */
+#include "alpha.c"
+#include "boxdraw.c"
+#include "opencopied.c"
+#include "fixkeyboardinput.c"
+#include "font2.c"
+#include "keyboardselect_x.c"
+#include "openurlonclick.c"
+#include "st_embedder_x.c"
+#include "xresources.c"
