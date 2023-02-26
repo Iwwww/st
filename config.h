@@ -7,8 +7,11 @@
  */
 // static char *font = "mono:pixelsize=18:antialias=true:autohint=true";
 // static char *font2[] = { "JoyPixels:pixelsize=18:antialias=true:autohint=true" };
-static char *font = "DejaVuSansMono:pixelsize=18:antialias=true:autohint=true";
-static char *font2[] = { "DejaVuSansMono:pixelsize=18:antialias=true:autohint=true" };
+// static char *font = "DejaVuSansMono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "JetBrainsMonoNL Nerd Font:style=SemiBold,Regular:pixelsize=18:antialias=true:autohint=true";
+
+// static char *font = "JetBrainsMonoNL NFM:pixelsize=18:antialias=true:autohint=true";
+static char *font2[] = { "DejaVuSansMono:pixelsize=16:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -110,9 +113,9 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.7;
+float alpha = 0.9;
 float alphaOffset = 0.0;
-float alphaUnfocus;
+float alphaUnfocus = 0.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -242,7 +245,7 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
-#define TERMMOD (Mod1Mask|ShiftMask)
+#define TERMMOD (ControlMask|ShiftMask)
 
 static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
 static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL };
@@ -262,7 +265,6 @@ static Shortcut shortcuts[] = {
 	{ ControlMask|ShiftMask,XK_V,           clippaste,      {.i =  0} },
 	{ ControlMask|ShiftMask,XK_c,           clipcopy,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ ControlMask,          XK_v,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
@@ -283,7 +285,7 @@ static Shortcut shortcuts[] = {
 	{ ControlMask|ShiftMask,XK_J,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
 	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
-	// { MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
+	{ MODKEY,               XK_i,           externalpipe,   {.v = openurlcmd } },
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
 };
