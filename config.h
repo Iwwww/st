@@ -8,11 +8,12 @@
 // static char *font = "mono:pixelsize=18:antialias=true:autohint=true";
 // static char *font2[] = { "JoyPixels:pixelsize=18:antialias=true:autohint=true" };
 // static char *font = "DejaVuSansMono:pixelsize=16:antialias=true:autohint=true";
+// static char *font = "JetBrainsMonoNL Nerd Font:style=SemiBold,Regular:pixelsize=18:antialias=true:autohint=true";
 static char *font = "JetBrainsMonoNL Nerd Font:style=SemiBold,Regular:pixelsize=18:antialias=true:autohint=true";
 
 // static char *font = "JetBrainsMonoNL NFM:pixelsize=18:antialias=true:autohint=true";
 static char *font2[] = { "DejaVuSansMono:pixelsize=16:antialias=true:autohint=true" };
-static int borderpx = 2;
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -164,10 +165,23 @@ unsigned int background = 258;
 static unsigned int cursorshape = 2;
 
 /*
+ * Whether to use pixel geometry or cell geometry
+ */
+
+static Geometry geometry = CellGeometry;
+
+/*
  * Default columns and rows numbers
  */
 static unsigned int cols = 80;
 static unsigned int rows = 24;
+
+/*
+ * Default width and height (including borders!)
+ */
+
+static unsigned int width = 564;
+static unsigned int height = 364;
 
 /*
  * Default colour and shape of the mouse cursor
